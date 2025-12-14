@@ -11,26 +11,26 @@ const logoToyota = "https://upload.wikimedia.org/wikipedia/commons/7/78/Toyota_L
 export default function LoginPage() {
   const router = useRouter();
 
-  // 1. Gerenciamento de Estado para os inputs (Critério I.I.)
+  
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
   const handleLogin = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setError(""); // Limpa erros anteriores
+    setError("");
 
-    // 2. Lógica de Autenticação Simples (simulação)
+ 
     const ADMIN_EMAIL = "admin@toyota.com";
     const ADMIN_PASSWORD = "123";
 
     if (email === ADMIN_EMAIL && password === ADMIN_PASSWORD) {
-      // 3. Armazenamento e Redirecionamento (Critério I.II.)
+   
       
-      // Armazena um token ou informação de que o usuário está logado
+  
       localStorage.setItem("user", JSON.stringify({ email: ADMIN_EMAIL, isAuthenticated: true }));
       
-      // Redireciona para o Dashboard
+     
       router.push("/dashboard");
 
     } else {
@@ -91,7 +91,7 @@ export default function LoginPage() {
             </div>
           </div>
 
-          {/* Mensagem de Erro (Renderização Condicional Implícita) */}
+          {/* Mensagem de Erro */}
           {error && (
             <p className="text-sm font-medium text-center text-red-600">
               {error}

@@ -1,10 +1,7 @@
 import Navbar from "./Navbar"
-
-
 interface IArea {
     titulo: string;
     children?: React.ReactNode;
-
 }
 
 export default function Areautil({titulo,children}:IArea){
